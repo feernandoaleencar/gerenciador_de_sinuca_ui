@@ -10,10 +10,12 @@ import { ToolbarModule } from "primeng/toolbar";
 import { ButtonModule } from "primeng/button";
 import { RippleModule } from "primeng/ripple";
 import { TableModule } from "primeng/table";
+import { ClienteListarComponent } from './feature/cliente/cliente-listar/cliente-listar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClienteListarComponent
   ],
     imports: [
         BrowserModule,
