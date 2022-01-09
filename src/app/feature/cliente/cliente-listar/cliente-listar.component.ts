@@ -13,10 +13,6 @@ export class ClienteListarComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    inserir() {
-
-    }
-
     editarCliente(product: any) {
 
     }

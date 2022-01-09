@@ -11,11 +11,13 @@ import { ButtonModule } from "primeng/button";
 import { RippleModule } from "primeng/ripple";
 import { TableModule } from "primeng/table";
 import { ClienteListarComponent } from './feature/cliente/cliente-listar/cliente-listar.component';
+import { ClienteCadastrarComponent } from './feature/cliente/cliente-cadastrar/cliente-cadastrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClienteListarComponent
+    ClienteListarComponent,
+    ClienteCadastrarComponent
   ],
     imports: [
         BrowserModule,
