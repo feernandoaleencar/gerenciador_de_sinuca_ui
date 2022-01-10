@@ -7,6 +7,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ClienteCadastrarComponent implements OnInit {
 
+    clienteDialog: boolean = false;
+    submitted: boolean = true;
+
+    cliente: any;
+
     constructor() {
     }
 
@@ -15,7 +20,13 @@ export class ClienteCadastrarComponent implements OnInit {
     }
 
     inserir() {
-
+        this.cliente = {};
+        this.submitted = false;
+        this.clienteDialog = true;
     }
 
+    hideDialog() {
+        this.clienteDialog = false;
+        this.submitted = false;
+    }
 }

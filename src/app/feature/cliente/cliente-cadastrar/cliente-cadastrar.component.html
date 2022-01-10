@@ -8,3 +8,10 @@
                 (click)="inserir()"></button>
     </ng-template>
 </p-toolbar>
+
+<p-dialog [(visible)]="clienteDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true"
+          styleClass="p-fluid">
+    <ng-template pTemplate="content">
+
+    </ng-template>
+</p-dialog>

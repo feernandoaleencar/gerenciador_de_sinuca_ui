@@ -12,6 +12,7 @@ import { RippleModule } from "primeng/ripple";
 import { TableModule } from "primeng/table";
 import { ClienteListarComponent } from './feature/cliente/cliente-listar/cliente-listar.component';
 import { ClienteCadastrarComponent } from './feature/cliente/cliente-cadastrar/cliente-cadastrar.component';
+import { DialogModule } from "primeng/dialog";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ClienteCadastrarComponent } from './feature/cliente/cliente-cadastrar/c
         ToolbarModule,
         ButtonModule,
         RippleModule,
-        TableModule
+        TableModule,
+        DialogModule
     ],
   providers: [],
   bootstrap: [AppComponent]

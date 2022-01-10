@@ -9,7 +9,7 @@
 
                 <app-cliente-cadastrar></app-cliente-cadastrar>
 
-                <p-table>
+                <p-table [value]="cliente">
                     <ng-template pTemplate="caption">
                         <div class="p-d-flex p-ai-center p-jc-between">
                             <h4 class="p-m-1">Lista de Clientes</h4>
@@ -40,25 +40,18 @@
                         </tr>
                     </ng-template>
 
-                    <ng-template pTemplate="body" let-product>
+                    <ng-template pTemplate="body" let-cliente>
                         <tr>
-                            <td>
-                                <p-tableCheckbox [value]="product"></p-tableCheckbox>
-                            </td>
-                            <td>{{product.name}}</td>
-                            <td>{{product.price}}</td>
-                            <td>{{product.category}}</td>
-                            <td>
-                            </td>
-                            <td><span
-                                [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                            </td>
+                            <td>{{cliente.cpf}}</td>
+                            <td>{{cliente.nome}}</td>
+                            <td>{{cliente.telefone}}</td>
+                            <td>{{cliente.cidade}}</td>
                             <td>
                                 <button pButton pRipple icon="pi pi-pencil"
                                         class="p-button-rounded p-button-success p-mr-2"
-                                        (click)="editarCliente(product)"></button>
+                                        (click)="editarCliente(cliente)"></button>
                                 <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
-                                        (click)="deletarCliente(product)"></button>
+                                        (click)="deletarCliente(cliente)"></button>
                             </td>
                         </tr>
                     </ng-template>
