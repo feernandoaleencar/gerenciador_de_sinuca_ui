@@ -9,12 +9,32 @@
     </ng-template>
 </p-toolbar>
 
-<p-dialog [(visible)]="clienteDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true"
+<p-dialog [(visible)]="clienteDialog" [style]="{width: '450px'}" header="Cadastrar Cliente" [modal]="true"
           styleClass="p-fluid">
     <ng-template pTemplate="content">
         <div class="p-field">
-            <label for="name">Name</label>
-            <input type="text" pInputText id="name" required autofocus/>
+            <label for="nome">Nome</label>
+            <input type="text" pInputText id="nome" required autofocus/>
+            <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+
+            <label for="cpf">CPF</label>
+            <input type="text" pInputText id="cpf" required autofocus/>
+            <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+
+            <label for="email">Email</label>
+            <input type="text" pInputText id="email" required autofocus/>
+            <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+
+            <label for="telefone">Telefone</label>
+            <input type="text" pInputText id="telefone" required autofocus/>
+            <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+
+            <label for="endereco">Endereco</label>
+            <input type="text" pInputText id="endereco" required autofocus/>
+            <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+
+            <label for="cidade">Cidade</label>
+            <input type="text" pInputText id="cidade" required autofocus/>
             <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
         </div>
     </ng-template>

@@ -13,6 +13,7 @@ import { TableModule } from "primeng/table";
 import { ClienteListarComponent } from './feature/cliente/cliente-listar/cliente-listar.component';
 import { ClienteCadastrarComponent } from './feature/cliente/cliente-cadastrar/cliente-cadastrar.component';
 import { DialogModule } from "primeng/dialog";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DialogModule } from "primeng/dialog";
   ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         InputTextModule,
         CardModule,
