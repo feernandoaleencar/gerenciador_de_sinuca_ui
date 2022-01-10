@@ -12,6 +12,10 @@
 <p-dialog [(visible)]="clienteDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true"
           styleClass="p-fluid">
     <ng-template pTemplate="content">
-
+        <div class="p-field">
+            <label for="name">Name</label>
+            <input type="text" pInputText id="name" required autofocus/>
+            <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+        </div>
     </ng-template>
 </p-dialog>

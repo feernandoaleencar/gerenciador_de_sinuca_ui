@@ -25,8 +25,4 @@ export class ClienteCadastrarComponent implements OnInit {
         this.clienteDialog = true;
     }
 
-    hideDialog() {
-        this.clienteDialog = false;
-        this.submitted = false;
-    }
 }

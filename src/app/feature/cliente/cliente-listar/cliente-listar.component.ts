@@ -6,6 +6,8 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./cliente-listar.component.scss']
 })
 export class ClienteListarComponent implements OnInit {
+    clienteDialog: boolean = false;
+    submitted: boolean = true;
 
     cliente = [{
         "cpf": "1000",
