@@ -9,33 +9,53 @@
     </ng-template>
 </p-toolbar>
 
-<p-dialog [(visible)]="clienteDialog" [style]="{width: '450px'}" header="Cadastrar Cliente" [modal]="true"
+<p-dialog [(visible)]="clienteDialog" [style]="{width: '550px'}" header="Cadastrar Cliente" [modal]="true"
           styleClass="p-fluid">
     <ng-template pTemplate="content">
+
         <div class="p-field">
             <label for="nome">Nome</label>
             <input type="text" pInputText id="nome" required autofocus/>
             <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+        </div>
 
-            <label for="cpf">CPF</label>
-            <input type="text" pInputText id="cpf" required autofocus/>
-            <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
-
+        <div class="p-field">
             <label for="email">Email</label>
             <input type="text" pInputText id="email" required autofocus/>
             <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+        </div>
 
-            <label for="telefone">Telefone</label>
-            <input type="text" pInputText id="telefone" required autofocus/>
-            <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+        <div class="p-formgrid p-grid">
 
+            <div class="p-field p-col">
+                <label for="cpf">CPF</label>
+                <input type="text" pInputText id="cpf" required autofocus/>
+                <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+            </div>
+
+            <div class="p-field p-col">
+                <label for="telefone">Telefone</label>
+                <input type="text" pInputText id="telefone" required autofocus/>
+            </div>
+
+        </div>
+
+        <div class="p-field">
             <label for="endereco">Endereco</label>
             <input type="text" pInputText id="endereco" required autofocus/>
             <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+        </div>
 
+        <div class="p-field">
             <label for="cidade">Cidade</label>
             <input type="text" pInputText id="cidade" required autofocus/>
             <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
         </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text"></button>
     </ng-template>
 </p-dialog>
