@@ -17,12 +17,14 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {PaginatorModule} from "primeng/paginator";
 import {InputMaskModule} from "primeng/inputmask";
 import {FileUploadModule} from "primeng/fileupload";
+import { Sinuca_cadastrarComponent } from './feature/sinuca/sinuca_cadastrar/sinuca_cadastrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteListarComponent,
-    ClienteCadastrarComponent
+    ClienteCadastrarComponent,
+    Sinuca_cadastrarComponent
   ],
     imports: [
         BrowserModule,
