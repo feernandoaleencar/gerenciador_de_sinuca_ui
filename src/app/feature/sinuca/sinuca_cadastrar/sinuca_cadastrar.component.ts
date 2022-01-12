@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Sinuca_cadastrarComponent implements OnInit {
 
-  constructor() { }
+    sinucaDialog: boolean = false;
+    submitted: boolean = true;
 
-  ngOnInit(): void {
-  }
+    cliente: any;
+
+    constructor() {
+    }
+
+    ngOnInit(): void {
+
+    }
+
+    inserir() {
+        this.cliente = {};
+        this.submitted = false;
+        this.sinucaDialog = true;
+    }
 
 }
