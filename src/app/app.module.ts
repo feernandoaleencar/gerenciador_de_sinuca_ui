@@ -14,6 +14,9 @@ import { ClienteListarComponent } from './feature/cliente/cliente-listar/cliente
 import { ClienteCadastrarComponent } from './feature/cliente/cliente-cadastrar/cliente-cadastrar.component';
 import { DialogModule } from "primeng/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {PaginatorModule} from "primeng/paginator";
+import {InputMaskModule} from "primeng/inputmask";
+import {FileUploadModule} from "primeng/fileupload";
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         ButtonModule,
         RippleModule,
         TableModule,
-        DialogModule
+        DialogModule,
+        PaginatorModule,
+        InputMaskModule,
+        FileUploadModule
     ],
   providers: [],
   bootstrap: [AppComponent]
