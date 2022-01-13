@@ -1,1 +1,62 @@
-<p>sinuca-listar works!</p>
+<div class="container">
+    <p-card>
+        <div class="p-grid">
+            <div class="p-col-12">
+                <h3>Sinucas</h3>
+            </div>
+
+            <div class="p-col-12">
+
+                <app-sinuca></app-sinuca>
+
+                <p-table [value]="sinuca">
+                    <ng-template pTemplate="caption">
+                        <div class="p-d-flex p-ai-center p-jc-between">
+                            <h4 class="p-m-1">Lista de Sinucas</h4>
+                            <span class="p-input-icon-right">
+                                <i class="pi pi-search"></i>
+                                <input pInputText
+                                       type="text"
+                                       placeholder="pesquisar..."/>
+                            </span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th pSortableColumn="cpf">CPF
+                                <p-sortIcon field="cpf"></p-sortIcon>
+                            </th>
+                            <th pSortableColumn="nome">Nome
+                                <p-sortIcon field="nome"></p-sortIcon>
+                            </th>
+                            <th pSortableColumn="telefone">Telefone
+                                <p-sortIcon field="telefone"></p-sortIcon>
+                            </th>
+                            <th pSortableColumn="cidade">Cidade
+                                <p-sortIcon field="cidade"></p-sortIcon>
+                            </th>
+                            <th>Ações</th>
+                        </tr>
+                    </ng-template>
+
+                    <ng-template pTemplate="body" let-sinuca>
+                        <tr>
+                            <td>{{sinuca.cpf}}</td>
+                            <td>{{sinuca.nome}}</td>
+                            <td>{{sinuca.telefone}}</td>
+                            <td>{{sinuca.cidade}}</td>
+                            <td>
+                                <button pButton pRipple icon="pi pi-pencil"
+                                        class="p-button-rounded p-button-success p-mr-2"
+                                        (click)="editarSinuca(sinuca)"></button>
+                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                                        (click)="deletarSinuca(sinuca)"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </p-card>
+</div>
