@@ -19,6 +19,7 @@ import {InputMaskModule} from "primeng/inputmask";
 import {FileUploadModule} from "primeng/fileupload";
 import { Sinuca_cadastrarComponent } from './feature/sinuca/sinuca-cadastrar/sinuca_cadastrar.component';
 import { SinucaListarComponent } from './feature/sinuca/sinuca-listar/sinuca-listar.component';
+import { SinucaMovimentarComponent } from './feature/sinuca/sinuca-movimentar/sinuca-movimentar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SinucaListarComponent } from './feature/sinuca/sinuca-listar/sinuca-lis
     ClienteListarComponent,
     ClienteCadastrarComponent,
     Sinuca_cadastrarComponent,
-    SinucaListarComponent
+    SinucaListarComponent,
+    SinucaMovimentarComponent
   ],
     imports: [
         BrowserModule,
