@@ -9,7 +9,7 @@
     </ng-template>
 </p-toolbar>
 
-<p-dialog [(visible)]="sinucaDialog" [style]="{width: '800px'}" header="Movimentação Sinuca" [modal]="true"
+<p-dialog [(visible)]="sinucaDialog" [style]="{width: '800px'}" header="Movimentação Sinuca - Patrimônio {{ sinucaId }}" [modal]="true"
           styleClass="p-fluid">
     <ng-template pTemplate="content">
 
@@ -18,12 +18,6 @@
             <div class="p-field p-col-3">
                 <label for="clienteId">Código</label>
                 <input type="text" pInputText id="clienteId" required autofocus/>
-                <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
-            </div>
-
-            <div class="p-field p-col-3">
-                <label for="patrimonio">Patrimônio</label>
-                <input type="text" pInputText id="patrimonio" required autofocus/>
                 <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
             </div>
 
@@ -45,6 +39,21 @@
                 <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
             </div>
 
+        </div>
+
+        <h3>Dados em Fichas</h3>
+        <div class="p-formgrid p-grid">
+            <div class="p-field p-col-3">
+                <label for="porcentagemEmpresa">Fichas Empresa</label>
+                <input type="text" pInputText id="porcentagemEmpresa" required autofocus/>
+            </div>
+
+            <div class="p-field p-col-3">
+                <label for="porcentagemCliente">Fichas Cliente</label>
+                <input type="text" pInputText id="porcentagemCliente" required autofocus/>
+                <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+            </div>
+
             <div class="p-field p-col-3">
                 <label for="porcentagemCliente">Diferença em Fichas</label>
                 <input type="text" pInputText id="porcentagemCliente" required autofocus/>
@@ -57,47 +66,33 @@
                 <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
             </div>
 
-            <div class="p-field p-col-3">
-                <label for="porcentagemCliente">Valor Total Fichas Desconto</label>
-                <input type="text" pInputText id="porcentagemCliente" required autofocus/>
-                <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
-            </div>
         </div>
 
-        <h3>Dados Empresa</h3>
+        <h3>Dados em valores R$</h3>
         <div class="p-formgrid p-grid">
             <div class="p-field p-col-3">
-                <label for="porcentagemEmpresa">Fichas Empresa</label>
-                <input type="text" pInputText id="porcentagemEmpresa" required autofocus/>
-            </div>
-
-
-
-            <div class="p-field p-col-3">
-                <label for="porcentagemCliente">Total Fichas Empresa</label>
-                <input type="text" pInputText id="porcentagemCliente" required autofocus/>
-                <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
-            </div>
-        </div>
-
-        <h3>Dados Cliente</h3>
-        <div class="p-formgrid p-grid">
-            <div class="p-field p-col-3">
-                <label for="porcentagemCliente">Fichas Cliente</label>
+                <label for="porcentagemCliente">Fichas</label>
                 <input type="text" pInputText id="porcentagemCliente" required autofocus/>
                 <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
             </div>
 
-
-
             <div class="p-field p-col-3">
-                <label for="porcentagemCliente">Total Fichas Cliente</label>
+                <label for="porcentagemCliente">Desconto</label>
                 <input type="text" pInputText id="porcentagemCliente" required autofocus/>
                 <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
             </div>
 
+            <div class="p-field p-col-3">
+                <label for="porcentagemCliente">Empresa</label>
+                <input type="text" pInputText id="porcentagemCliente" required autofocus/>
+                <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+            </div>
 
-
+            <div class="p-field p-col-3">
+                <label for="porcentagemCliente">Cliente</label>
+                <input type="text" pInputText id="porcentagemCliente" required autofocus/>
+                <small class="p-invalid" *ngIf="submitted && !cliente">Name is required.</small>
+            </div>
 
         </div>
 

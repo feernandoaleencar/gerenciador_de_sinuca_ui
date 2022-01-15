@@ -10,6 +10,7 @@ export class SinucaMovimentarComponent implements OnInit {
     submitted: boolean = true;
 
     cliente: any;
+    sinucaId: number = 10;
 
     constructor() {
     }
