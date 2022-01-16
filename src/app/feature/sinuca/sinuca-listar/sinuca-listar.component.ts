@@ -16,7 +16,7 @@ export class SinucaListarComponent implements OnInit {
         "price": 65,
         "cidade": "Accessories",
         "quantity": 24,
-        "inventoryStatus": "INSTOCK",
+        "status": "INSTOCK",
         "rating": 5
     },
         {
@@ -28,7 +28,7 @@ export class SinucaListarComponent implements OnInit {
             "price": 72,
             "cidade": "Accessories",
             "quantity": 61,
-            "inventoryStatus": "INSTOCK",
+            "status": "INSTOCK",
             "rating": 4
         },
         {
@@ -40,14 +40,21 @@ export class SinucaListarComponent implements OnInit {
             "price": 79,
             "cidade": "Fitness",
             "quantity": 2,
-            "inventoryStatus": "LOWSTOCK",
+            "status": "LOWSTOCK",
             "rating": 3
         }]
+
+    status: any[] | undefined;
 
     constructor() {
     }
 
     ngOnInit(): void {
+        this.status = [
+            {label: 'INSTOCK', value: 'instock'},
+            {label: 'LOWSTOCK', value: 'lowstock'},
+            {label: 'OUTOFSTOCK', value: 'outofstock'}
+        ];
     }
 
     editarSinuca(sinuca: any) {

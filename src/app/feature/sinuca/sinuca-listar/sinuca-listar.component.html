@@ -36,6 +36,9 @@
                             <th pSortableColumn="cidade">Cidade
                                 <p-sortIcon field="cidade"></p-sortIcon>
                             </th>
+                            <th pSortableColumn="status">Status
+                                <p-sortIcon field="status"></p-sortIcon>
+                            </th>
                             <th>Ações</th>
                         </tr>
                     </ng-template>
@@ -47,11 +50,21 @@
                             <td>{{sinuca.telefone}}</td>
                             <td>{{sinuca.cidade}}</td>
                             <td>
+                                <span
+                                    [class]="'product-badge status-' + sinuca.status.toLowerCase()">
+                                    {{sinuca.status}}
+                                </span>
+                            </td>
+                            <td>
                                 <button pButton pRipple icon="pi pi-pencil"
                                         class="p-button-rounded p-button-success p-mr-2"
+                                        pTooltip="Adicionar Movimentação" tooltipPosition="top"
                                         (click)="editarSinuca(sinuca)"></button>
-                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                                <button pButton pRipple icon="pi pi-trash"
+                                        class="p-button-rounded p-button-warning"
+                                        pTooltip="Enter your username" tooltipPosition="top"
                                         (click)="deletarSinuca(sinuca)"></button>
+
                             </td>
                         </tr>
                     </ng-template>

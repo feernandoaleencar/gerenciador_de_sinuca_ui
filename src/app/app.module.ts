@@ -20,6 +20,7 @@ import {FileUploadModule} from "primeng/fileupload";
 import { Sinuca_cadastrarComponent } from './feature/sinuca/sinuca-cadastrar/sinuca_cadastrar.component';
 import { SinucaListarComponent } from './feature/sinuca/sinuca-listar/sinuca-listar.component';
 import { SinucaMovimentarComponent } from './feature/sinuca/sinuca-movimentar/sinuca-movimentar.component';
+import {TooltipModule} from "primeng/tooltip";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SinucaMovimentarComponent } from './feature/sinuca/sinuca-movimentar/si
         DialogModule,
         PaginatorModule,
         InputMaskModule,
-        FileUploadModule
+        FileUploadModule,
+        TooltipModule
     ],
   providers: [],
   bootstrap: [AppComponent]
