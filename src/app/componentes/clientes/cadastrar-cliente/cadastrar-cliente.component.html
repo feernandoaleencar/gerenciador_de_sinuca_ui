@@ -5,6 +5,83 @@
 
             <form [formGroup]="formCliente" (ngSubmit)="salvar()">
 
+                <div class="p-grid">
+                    <div class="p-fluid p-col-12">
+                        <label>Nome</label>
+                        <input name="nome" formControlName="nome" type="text" pInputText required>
+                        <app-message [control]="formCliente.get('nome')" error="required"
+                                     text="Informe um nome">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-6">
+                        <label>CPF</label>
+                        <p-inputMask type="text"
+                                     mask="999.999.999-99"
+                                     placeholder="999.999.999-99"
+                                     name="cpf" formControlName="cpf"></p-inputMask>
+                        <app-message [control]="formCliente.get('cpf')" error="required"
+                                     text="Informe um cpf">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-6">
+                        <label>E-mail</label>
+                        <input name="email" formControlName="email" type="email" pInputText
+                               placeholder="seu-email@mail.com">
+                        <app-message [control]="formCliente.get('email')" error="required"
+                                     text="Informe um e-mail">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-2">
+                        <label>Cep</label>
+                        <p-inputMask type="text"
+                               mask="99.999-999"
+                               placeholder="99.999-999"
+                               name="cep"
+                               formControlName="cep"></p-inputMask>
+                        <app-message [control]="formCliente.get('cep')" error="required"
+                                     text="Informe o cep">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-8">
+                        <label>Endereço</label>
+                        <input name="logradouro" formControlName="logradouro" type="text" pInputText maxlength="60">
+                        <!-- TODO: Corrigir no banco o tamanho do campo -->
+                        <app-message [control]="formCliente.get('logradouro')" error="required"
+                                     text="Informe o endereço">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-2">
+                        <label>Número</label>
+                        <input name="numero" formControlName="numero" type="number" pInputText [max]="10000">
+                        <app-message [control]="formCliente.get('numero')" error="required"
+                                     text="Informe o número">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-8">
+                        <label>Complemento</label>
+                        <input name="complemento" formControlName="complemento" type="text" pInputText maxlength="60">
+                        <!-- TODO: Corrigir no banco o tamanho do campo -->
+                        <app-message [control]="formCliente.get('complemento')" error="required"
+                                     text="Informe o complemento">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-4">
+                        <label>Bairro</label>
+                        <input name="bairro" formControlName="bairro" type="text" pInputText maxlength="60">
+                        <!-- TODO: Corrigir no banco o tamanho do campo -->
+                        <app-message [control]="formCliente.get('bairro')" error="required"
+                                     text="Informe o bairro">
+                        </app-message>
+                    </div>
+                </div>
+
                 <div class="p-grid espamentoTop">
                     <div style="text-align: start" class="p-col-6 p-md-6">
                         <button pButton type="button"

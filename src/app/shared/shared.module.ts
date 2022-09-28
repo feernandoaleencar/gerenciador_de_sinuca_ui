@@ -12,15 +12,24 @@ import {InputMaskModule} from "primeng/inputmask";
 import {FileUploadModule} from "primeng/fileupload";
 import {TooltipModule} from "primeng/tooltip";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MessageComponent} from './message/message.component';
+import {MessageModule} from "primeng/message";
 
 @NgModule({
-    declarations: [],
+    declarations: [
+        MessageComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
+        MessageModule,
 
         InputTextModule,
+        InputMaskModule,
+
+
+
         CardModule,
         ToolbarModule,
         ButtonModule,
@@ -28,7 +37,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         TableModule,
         DialogModule,
         PaginatorModule,
-        InputMaskModule,
         FileUploadModule,
         TooltipModule,
     ],
@@ -36,8 +44,13 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
+        MessageComponent,
 
         InputTextModule,
+        InputMaskModule,
+
+
+
         CardModule,
         ToolbarModule,
         ButtonModule,
