@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-consultar-cliente',
-  templateUrl: './consultar-cliente.component.html',
-  styleUrls: ['./consultar-cliente.component.scss']
+    selector: 'app-consultar-cliente',
+    templateUrl: './consultar-cliente.component.html',
+    styleUrls: ['./consultar-cliente.component.scss']
 })
 export class ConsultarClienteComponent implements OnInit {
 
-  constructor() { }
+    constructor(
+        private router: Router,
+    ) {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
+
+    irParaPagina() {
+        this.router.navigate(['/clientes/novo'])
+    }
 
 }

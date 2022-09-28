@@ -16,14 +16,20 @@ label {
     }
 }
 
+.p-button.p-button-outlined {
+    background-color: transparent;
+    color: #1ad272 !important;
+    border: 1px solid;
+}
+
 .p-card .p-card-content {
     padding: 0;
 }
 
 h3 {
-    color: #405f8e;
+    color: #000000;
     padding-bottom: 5px;
-    border-bottom: 1px solid #405f8e;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .p-card .p-card-body {
