@@ -1,1 +1,38 @@
-<p>cadastrar-cliente works!</p>
+<div class="container">
+    <div>
+        <p-card>
+            <h3>Cadastrar Cliente</h3>
+
+            <form [formGroup]="formCliente" (ngSubmit)="salvar()">
+
+                <div class="p-grid espamentoTop">
+                    <div style="text-align: start" class="p-col-6 p-md-6">
+                        <button pButton type="button"
+                                label="Voltar"
+                                class="p-button-outlined p-button-secondary" icon="pi pi-arrow-left"
+                                (click)="voltarParaPagina()">
+                        </button>
+                    </div>
+                    <div style="text-align: end" class="p-col-6 p-md-6 semPaddingLeft">
+                        <button pButton type="submit"
+                                class="p-button-outlined p-button-success"
+                                icon="pi pi-save"
+                                pTooltip="Salvar"
+                                tooltipPosition="top"
+                                label="Salvar"
+                                [disabled]="formCliente.invalid">
+                        </button>
+                        <button pButton type="button"
+                                class="p-button-outlined p-button-success"
+                                icon="pi pi-plus"
+                                pTooltip="Novo"
+                                tooltipPosition="top"
+                                label="Novo"
+                                (click)="novo()">
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </p-card>
+    </div>
+</div>

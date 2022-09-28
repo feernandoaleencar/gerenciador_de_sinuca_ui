@@ -11,11 +11,14 @@ import {PaginatorModule} from "primeng/paginator";
 import {InputMaskModule} from "primeng/inputmask";
 import {FileUploadModule} from "primeng/fileupload";
 import {TooltipModule} from "primeng/tooltip";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [],
     imports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
 
         InputTextModule,
         CardModule,
@@ -31,6 +34,8 @@ import {TooltipModule} from "primeng/tooltip";
     ],
     exports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
 
         InputTextModule,
         CardModule,
