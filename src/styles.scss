@@ -1,8 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #F5F5F5;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #404c51
+}
+
+label {
+    font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+.p-card .p-card-content {
+    padding: 0;
 }
 
 h3 {
@@ -11,27 +26,46 @@ h3 {
     border-bottom: 1px solid #405f8e;
 }
 
-h4 {
-    color: #405f8e;
-    margin-right: 42.8rem;
-    display: inline-block;
+.p-card .p-card-body {
+    padding: 1rem;
+    margin-top: 1rem !important;
 }
 
-label {
-    font-weight: bold;
+.p-datatable.p-datatable-gridlines .p-datatable-thead > tr > th {
+    text-align: center;
 }
 
-.p-toolbar {
-    margin-bottom: 30px;
+.p-datatable .p-datatable-thead > tr > th {
+    text-align: center;
 }
 
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-        margin: 0 auto;
+.p-datatable.p-datatable-gridlines .p-datatable-thead > tr > th {
+    text-align: center;
+}
 
-        .p-card .p-card-content {
-            padding: 0;
-        }
+.p-datatable .p-datatable-thead > tr > th {
+    text-align: center;
+}
+
+.col-acoes {
+    width: 150px;
+}
+
+.col-acoes > a {
+    margin-right: 5px;
+}
+
+@media (min-width: 40em) {
+    .col-acoes-header {
+        width: 125px;
+    }
+
+    .col-acoes {
+        width: 125px;
+        text-align: center !important;
+    }
+
+    .col-acoes .p-button {
+        margin: 1px;
     }
 }
