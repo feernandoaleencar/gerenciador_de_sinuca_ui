@@ -11,7 +11,7 @@ label {
 
 @media (min-width: 1200px) {
     .container {
-        width: 1170px;
+        width: 1200px;
         margin: 0 auto;
     }
 }
@@ -46,6 +46,10 @@ h3 {
     text-align: center;
 }
 
+.p-datatable.p-datatable-gridlines .p-datatable-tbody > tr > td {
+    text-align: center;
+    height: auto;
+}
 .p-datatable .p-datatable-thead > tr > th {
     text-align: center;
 }
@@ -68,11 +72,11 @@ h3 {
 
 @media (min-width: 40em) {
     .col-acoes-header {
-        width: 125px;
+        width: 135px;
     }
 
     .col-acoes {
-        width: 125px;
+        width: 135px;
         text-align: center !important;
     }
 
