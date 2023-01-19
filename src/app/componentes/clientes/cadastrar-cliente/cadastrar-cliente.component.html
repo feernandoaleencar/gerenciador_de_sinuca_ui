@@ -92,6 +92,7 @@
                             placeholder="Selecione o Estado"
                             optionLabel="nomeComSigla"
                             optionValue="id"
+                            (onChange)="listarMunicipios($event)"
                             emptyFilterMessage="Nenhum registro encontrado"
                             [filter]="true"
                             [showClear]="true">
@@ -101,17 +102,27 @@
                         </app-message>
                     </div>
 
-                    <div class="p-fluid p-col-12 p-md-6">
+                    <div class="p-fluid p-col-12 p-md-6" *ngIf="listaMunicipios.length === 0">
                         <label>Município</label>
                         <p-dropdown
-                            [options]="cities"
-                            placeholder="Select a City"
-                            optionLabel="name"
+                            placeholder="Selecione um Estado"
+                            [disabled]="true">
+                        </p-dropdown>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-6" *ngIf="listaMunicipios.length > 0">
+                        <label>Município</label>
+                        <p-dropdown
+                            [options]="listaMunicipios"
+                            placeholder="Selecione um Município"
+                            optionLabel="nome"
                             optionValue="id"
+                            emptyFilterMessage="Nenhum registro encontrado"
+                            [filter]="true"
                             [showClear]="true">
                         </p-dropdown>
                         <app-message [control]="formCliente.get('cpf')" error="required"
-                                     text="Informe um cpf">
+                                     text="Informe um município">
                         </app-message>
                     </div>
                 </div>

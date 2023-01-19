@@ -3,7 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ClienteDTO} from "../../../model/ClienteDTO";
 import {EstadoService} from "../../estados/estado.service";
-import {EstadoDTO} from "../../../model/EstadoDTO";
+import {EstadoDTO, MunicipioDTO} from "../../../model/EstadoDTO";
+import {MunicipioService} from "../../municipios/municipio.service";
 
 @Component({
     selector: 'app-cadastrar-cliente',
@@ -15,12 +16,13 @@ export class CadastrarClienteComponent implements OnInit {
     formCliente!: FormGroup;
 
     listaEstados: EstadoDTO[] = [];
-    cities: City[] = [];
+    listaMunicipios: MunicipioDTO[] = [];
 
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
-        private estadoService: EstadoService
+        private estadoService: EstadoService,
+        private municipioService: MunicipioService
     ) {
     }
 
@@ -29,18 +31,24 @@ export class CadastrarClienteComponent implements OnInit {
         this.listarEstados();
     }
 
-    listarEstados(){
+    listarEstados() {
         this.estadoService.listarEstados()
             .then(resultado => {
                 this.listaEstados = resultado;
             });
     }
 
-    listarMunicipios(){
-        this.estadoService.listarEstados()
-            .then(resultado => {
-                this.listaEstados = resultado;
-            });
+    listarMunicipios(event: any) {
+        if (event.value !== null) {
+            let idEstado = event.value;
+
+            this.municipioService.listarMunicipios(idEstado)
+                .then(resultado => {
+                    this.listaMunicipios = resultado;
+                });
+        } else {
+            this.listaMunicipios = [];
+        }
     }
 
     configurarFormulario() {
@@ -68,7 +76,6 @@ export class CadastrarClienteComponent implements OnInit {
     voltarParaPagina() {
         this.router.navigate(['/clientes'])
     }
-
 
 
 }
