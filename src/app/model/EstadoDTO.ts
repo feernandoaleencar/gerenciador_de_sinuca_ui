@@ -1,3 +1,10 @@
+export class MunicipioDTO{
+    id?: number;
+    nome?: string;
+    estado?: EstadoDTO;
+    codigoIbge?: number;
+}
+
 export class EstadoDTO {
     id?: number;
     codigoIbge?: number;
