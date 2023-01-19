@@ -37,47 +37,79 @@
                     <div class="p-fluid p-col-12 p-md-2">
                         <label>Cep</label>
                         <p-inputMask type="text"
-                               mask="99.999-999"
-                               placeholder="99.999-999"
-                               name="cep"
-                               formControlName="cep"></p-inputMask>
-                        <app-message [control]="formCliente.get('cep')" error="required"
+                                     mask="99.999-999"
+                                     placeholder="99.999-999"
+                                     name="endereco_cep"
+                                     formControlName="endereco_cep"></p-inputMask>
+                        <app-message [control]="formCliente.get('endereco_cep')" error="required"
                                      text="Informe o cep">
                         </app-message>
                     </div>
 
                     <div class="p-fluid p-col-12 p-md-8">
                         <label>Endereço</label>
-                        <input name="logradouro" formControlName="logradouro" type="text" pInputText maxlength="60">
+                        <input name="endereco_logradouro" formControlName="endereco_logradouro" type="text" pInputText
+                               maxlength="60">
                         <!-- TODO: Corrigir no banco o tamanho do campo -->
-                        <app-message [control]="formCliente.get('logradouro')" error="required"
+                        <app-message [control]="formCliente.get('endereco_logradouro')" error="required"
                                      text="Informe o endereço">
                         </app-message>
                     </div>
 
                     <div class="p-fluid p-col-12 p-md-2">
                         <label>Número</label>
-                        <input name="numero" formControlName="numero" type="number" pInputText [max]="10000">
-                        <app-message [control]="formCliente.get('numero')" error="required"
+                        <input name="endereco_numero" formControlName="endereco_numero" type="number" pInputText
+                               [max]="10000">
+                        <app-message [control]="formCliente.get('endereco_numero')" error="required"
                                      text="Informe o número">
                         </app-message>
                     </div>
 
                     <div class="p-fluid p-col-12 p-md-8">
                         <label>Complemento</label>
-                        <input name="complemento" formControlName="complemento" type="text" pInputText maxlength="60">
+                        <input name="endereco_complemento" formControlName="endereco_complemento" type="text" pInputText
+                               maxlength="60">
                         <!-- TODO: Corrigir no banco o tamanho do campo -->
-                        <app-message [control]="formCliente.get('complemento')" error="required"
+                        <app-message [control]="formCliente.get('endereco_complemento')" error="required"
                                      text="Informe o complemento">
                         </app-message>
                     </div>
 
                     <div class="p-fluid p-col-12 p-md-4">
                         <label>Bairro</label>
-                        <input name="bairro" formControlName="bairro" type="text" pInputText maxlength="60">
+                        <input name="endereco_bairro" formControlName="endereco_bairro" type="text" pInputText
+                               maxlength="60">
                         <!-- TODO: Corrigir no banco o tamanho do campo -->
-                        <app-message [control]="formCliente.get('bairro')" error="required"
+                        <app-message [control]="formCliente.get('endereco_bairro')" error="required"
                                      text="Informe o bairro">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-6">
+                        <label>Estado</label>
+                        <p-dropdown
+                            [options]="listaEstados"
+                            placeholder="Selecione o Estado"
+                            optionLabel="nomeComSigla"
+                            emptyFilterMessage="Nenhum registro encontrado"
+                            [filter]="true"
+                            [showClear]="true">
+                        </p-dropdown>
+                        <app-message [control]="formCliente.get('email')" error="required"
+                                     text="Informe um estado">
+                        </app-message>
+                    </div>
+
+                    <div class="p-fluid p-col-12 p-md-6">
+                        <label>Município</label>
+                        <p-dropdown
+                            [options]="cities"
+                            placeholder="Select a City"
+                            optionLabel="name"
+                            [showClear]="true">
+                        </p-dropdown>
+                        <app-message [control]="formCliente.get('cpf')" error="required"
+                                     text="Informe um cpf">
                         </app-message>
                     </div>
                 </div>

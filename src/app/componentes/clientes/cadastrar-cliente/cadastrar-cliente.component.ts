@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ClienteDTO} from "../../../model/ClienteDTO";
+import {EstadoService} from "../../estados/estado.service";
+import {EstadoDTO} from "../../../model/EstadoDTO";
 
 @Component({
     selector: 'app-cadastrar-cliente',
@@ -12,14 +14,33 @@ export class CadastrarClienteComponent implements OnInit {
 
     formCliente!: FormGroup;
 
+    listaEstados: EstadoDTO[] = [];
+    cities: City[] = [];
+
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
+        private estadoService: EstadoService
     ) {
     }
 
     ngOnInit(): void {
         this.configurarFormulario();
+        this.listarEstados();
+    }
+
+    listarEstados(){
+        this.estadoService.listarEstados()
+            .then(resultado => {
+                this.listaEstados = resultado;
+            });
+    }
+
+    listarMunicipios(){
+        this.estadoService.listarEstados()
+            .then(resultado => {
+                this.listaEstados = resultado;
+            });
     }
 
     configurarFormulario() {
@@ -28,11 +49,11 @@ export class CadastrarClienteComponent implements OnInit {
             nome: [null, Validators.required],
             email: [null, Validators.required],
             cpf: [null, Validators.required],
-            logradouro: [null, Validators.required],
-            numero: [null, Validators.required],
-            complemento: [null, Validators.required],
-            bairro: [null, Validators.required],
-            cep: [null, Validators.required]
+            endereco_logradouro: [null, Validators.required],
+            endereco_numero: [null, Validators.required],
+            endereco_complemento: [null],
+            endereco_bairro: [null, Validators.required],
+            endereco_cep: [null, Validators.required]
         });
     }
 
@@ -50,4 +71,10 @@ export class CadastrarClienteComponent implements OnInit {
 
 
 
+}
+
+
+interface City {
+    name: string,
+    code: string
 }
