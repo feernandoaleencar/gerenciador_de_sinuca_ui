@@ -91,6 +91,7 @@
                             [options]="listaEstados"
                             placeholder="Selecione o Estado"
                             optionLabel="nomeComSigla"
+                            optionValue="id"
                             emptyFilterMessage="Nenhum registro encontrado"
                             [filter]="true"
                             [showClear]="true">
@@ -106,6 +107,7 @@
                             [options]="cities"
                             placeholder="Select a City"
                             optionLabel="name"
+                            optionValue="id"
                             [showClear]="true">
                         </p-dropdown>
                         <app-message [control]="formCliente.get('cpf')" error="required"
