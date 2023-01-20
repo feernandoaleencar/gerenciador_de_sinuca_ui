@@ -1,4 +1,14 @@
-export class MunicipioDTO{
+export class EnderecoDTO {
+    logradouro?: string;
+    numero?: string;
+    complemento?: string;
+    bairro?: string;
+    cep?: string;
+    municipio?: MunicipioDTO;
+    estado?: EstadoDTO;
+}
+
+export class MunicipioDTO {
     id?: number;
     nome?: string;
     estado?: EstadoDTO;
