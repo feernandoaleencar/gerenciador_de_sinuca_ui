@@ -3,8 +3,10 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ClienteDTO} from "../../../model/ClienteDTO";
 import {EstadoService} from "../../estados/estado.service";
-import {EstadoDTO, MunicipioDTO} from "../../../model/EstadoDTO";
+import {EnderecoDTO, EstadoDTO, MunicipioDTO} from "../../../model/EstadoDTO";
 import {MunicipioService} from "../../municipios/municipio.service";
+import {ClienteService} from "../cliente.service";
+import {MessageService} from "primeng/api";
 
 @Component({
     selector: 'app-cadastrar-cliente',
@@ -22,7 +24,9 @@ export class CadastrarClienteComponent implements OnInit {
         private formBuilder: FormBuilder,
         private router: Router,
         private estadoService: EstadoService,
-        private municipioService: MunicipioService
+        private municipioService: MunicipioService,
+        private clienteService: ClienteService,
+        private messageService: MessageService
     ) {
     }
 
@@ -61,11 +65,34 @@ export class CadastrarClienteComponent implements OnInit {
             endereco_numero: [null, Validators.required],
             endereco_complemento: [null],
             endereco_bairro: [null, Validators.required],
-            endereco_cep: [null, Validators.required]
+            endereco_cep: [null, Validators.required],
+            endereco_municipio: [null, Validators.required],
+            endereco_estado: [null, Validators.required]
         });
     }
 
     salvar() {
+        const cliente = this.getCliente();
+
+        this.clienteService.adicionar(cliente)
+            .then(Cliente => {
+                this.messageService.add({severity: 'success', detail: 'Cliente adicionado com sucesso!'});
+                // this.formCliente.reset();
+                // this.router.navigate(['/clientes'])
+            });
+    }
+
+    private getCliente() {
+        const cliente = this.formCliente.value as ClienteDTO;
+        cliente.endereco = new EnderecoDTO();
+        cliente.endereco.cep = this.formCliente.get('endereco_cep')?.value;
+        cliente.endereco.logradouro = this.formCliente.get('endereco_logradouro')?.value;
+        cliente.endereco.numero = this.formCliente.get('endereco_numero')?.value;
+        cliente.endereco.complemento = this.formCliente.get('endereco_complemento')?.value;
+        cliente.endereco.bairro = this.formCliente.get('endereco_bairro')?.value;
+        cliente.endereco.municipio = new MunicipioDTO();
+        cliente.endereco.municipio.id = this.formCliente.get('endereco_municipio')?.value;
+        return cliente;
     }
 
     novo() {
@@ -78,10 +105,4 @@ export class CadastrarClienteComponent implements OnInit {
     }
 
 
-}
-
-
-interface City {
-    name: string,
-    code: string
 }
