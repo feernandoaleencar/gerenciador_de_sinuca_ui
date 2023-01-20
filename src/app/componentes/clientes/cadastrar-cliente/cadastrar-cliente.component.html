@@ -94,10 +94,11 @@
                             optionValue="id"
                             (onChange)="listarMunicipios($event)"
                             emptyFilterMessage="Nenhum registro encontrado"
+                            formControlName="endereco_estado"
                             [filter]="true"
                             [showClear]="true">
                         </p-dropdown>
-                        <app-message [control]="formCliente.get('email')" error="required"
+                        <app-message [control]="formCliente.get('endereco_estado')" error="required"
                                      text="Informe um estado">
                         </app-message>
                     </div>
@@ -118,10 +119,11 @@
                             optionLabel="nome"
                             optionValue="id"
                             emptyFilterMessage="Nenhum registro encontrado"
+                            formControlName="endereco_municipio"
                             [filter]="true"
                             [showClear]="true">
                         </p-dropdown>
-                        <app-message [control]="formCliente.get('cpf')" error="required"
+                        <app-message [control]="formCliente.get('endereco_municipio')" error="required"
                                      text="Informe um município">
                         </app-message>
                     </div>
